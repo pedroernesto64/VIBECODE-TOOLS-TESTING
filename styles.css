@@ -1,0 +1,86 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  color: #f8fafc;
+}
+
+.container {
+  padding: 2rem;
+  width: 100%;
+  max-width: 480px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  background: linear-gradient(to right, #f8fafc, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  margin-top: 0.75rem;
+  font-size: 1.05rem;
+  color: #94a3b8;
+}
+
+.divider {
+  width: 3rem;
+  height: 3px;
+  background: linear-gradient(to right, #38bdf8, #818cf8);
+  border-radius: 999px;
+  margin: 2rem auto;
+}
+
+.hint {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+code {
+  font-family: "Consolas", "Monaco", monospace;
+  font-size: 0.85em;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 0.15rem 0.45rem;
+  border-radius: 0.35rem;
+}
