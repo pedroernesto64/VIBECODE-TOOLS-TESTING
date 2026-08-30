@@ -1,0 +1,24 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Project-specific local outputs (your saved adapter history)
+/history/
+/outputs/
+*.log
+
+# OpenCode & IDE temporary/cache files
+.opencode/cache/
+.opencode/logs/
+.vscode/
+.idea/
+
+# OS specific files
+.DS_Store
+Thumbs.db
