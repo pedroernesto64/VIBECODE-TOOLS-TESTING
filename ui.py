@@ -161,8 +161,8 @@ class App(ctk.CTk):
 
         # Rendered Markdown View (HTMLLabel inside a frame or directly)
         # We use a CTkFrame as wrapper for HTMLLabel to control styling/background cleanly in CustomTkinter
-        self.html_wrapper = ctk.CTkFrame(self.processed_body_container, fg_color="white")
-        self.html_label = HTMLLabel(self.html_wrapper, html="<h3>Processed Markdown Output will appear here...</h3>")
+        self.html_wrapper = ctk.CTkFrame(self.processed_body_container, fg_color="#1d1e1e")
+        self.html_label = HTMLLabel(self.html_wrapper, html="<h3>Processed Markdown Output will appear here...</h3>", background="#1d1e1e", foreground="#ffffff")
         self.html_label.pack(fill="both", expand=True, padx=5, pady=5)
         
         # Initially hide html wrapper, show textbox
