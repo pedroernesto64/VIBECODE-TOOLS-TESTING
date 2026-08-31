@@ -161,8 +161,8 @@ class App(ctk.CTk):
 
         # Rendered Markdown View (HTMLLabel inside a frame or directly)
         # We use a CTkFrame as wrapper for HTMLLabel to control styling/background cleanly in CustomTkinter
-        self.html_wrapper = ctk.CTkFrame(self.processed_body_container, fg_color="white")
-        self.html_label = HTMLLabel(self.html_wrapper, html="<h3>Processed Markdown Output will appear here...</h3>")
+        self.html_wrapper = ctk.CTkFrame(self.processed_body_container, fg_color="#1d1e1e")
+        self.html_label = HTMLLabel(self.html_wrapper, background="#1d1e1e", foreground="#ffffff", html="<h3>Processed Markdown Output will appear here...</h3>")
         self.html_label.pack(fill="both", expand=True, padx=5, pady=5)
         
         # Initially hide html wrapper, show textbox
@@ -285,9 +285,10 @@ class App(ctk.CTk):
         self.is_rendered_markdown = not self.is_rendered_markdown
         if self.is_rendered_markdown:
             self.toggle_btn.configure(text="Toggle: Plain Text")
-            # Convert text to markdown html
+            # Convert text to markdown html with dark theme wrapper styling
             text_content = self.processed_textbox.get("1.0", "end-1c")
-            html_content = markdown.markdown(text_content)
+            raw_html = markdown.markdown(text_content)
+            html_content = f"<html><body style='background-color: #1d1e1e; color: #ffffff; font-family: sans-serif;'>{raw_html}</body></html>"
             self.html_label.set_html(html_content)
             
             # Hide textbox, show html wrapper
@@ -313,7 +314,9 @@ class App(ctk.CTk):
         if self.is_rendered_markdown:
             # Refresh markdown view if active
             text_content = self.processed_textbox.get("1.0", "end-1c")
-            self.html_label.set_html(markdown.markdown(text_content))
+            raw_html = markdown.markdown(text_content)
+            html_content = f"<html><body style='background-color: #1d1e1e; color: #ffffff; font-family: sans-serif;'>{raw_html}</body></html>"
+            self.html_label.set_html(html_content)
 
     def send_prompt(self):
         prompt_text = self.prompt_entry.get()
